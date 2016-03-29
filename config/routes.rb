@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-
   resource :registrations, only: [:new, :create]
   resource :sessions, only: [:new, :create, :destroy]
 
-#apparently this is not needed
+  #APPARENTLY THS IS NOT NEEDED
   resources :users
 
+  #ROOT PAGE
   root 'users#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

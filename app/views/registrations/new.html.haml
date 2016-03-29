@@ -1,6 +1,8 @@
 %h1 Registrations#new
 %p Find me in app/views/registrations/new.html.haml
 
+
+//ERROR MESSAGES IF ANY
 -if @user.errors.any?
   %h2
     = pluralize(@user.errors.count, "error")
@@ -9,6 +11,7 @@
   - @user.errors.each do |attr, message|
     .alert.alert-danger= message
 
+//FORM FOR USER REGISTRATION
 = form_for @user, url: registrations_path, method: :post do |f|
   = f.label :name
   = f.text_field :name
@@ -20,4 +23,5 @@
   = f.password_field :password_confirmation
   = f.submit "登録する"
 
+//LINKS
 = link_to "ログインする", new_sessions_path
