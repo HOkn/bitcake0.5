@@ -1,7 +1,7 @@
 %h1 Registrations#new
 %p Find me in app/views/registrations/new.html.haml
 
-- @user.errors.each do |attr, messgae|
+- @user.errors.each do |attr, message|
   .alert.alert-danger = message
 
 = form_for @user, url: registrations_path, method: :post do |f|
