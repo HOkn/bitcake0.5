@@ -1,12 +1,13 @@
 %h1 Registrations#new
 %p Find me in app/views/registrations/new.html.haml
 
-%h2
-  = pluralize(@user.errors.count, "error")
-  ="prohibited this article from being saved"
+-if @user.errors.any?
+  %h2
+    = pluralize(@user.errors.count, "error")
+    ="prohibited this article from being saved"
 
-- @user.errors.each do |attr, message|
-  .alert.alert-danger= message
+  - @user.errors.each do |attr, message|
+    .alert.alert-danger= message
 
 = form_for @user, url: registrations_path, method: :post do |f|
   = f.label :name
@@ -17,4 +18,6 @@
   = f.password_field :password
   = f.label :password_confirmation
   = f.password_field :password_confirmation
-  = f.submit
+  = f.submit "登録する"
+
+= link_to "ログインする", new_sessions_path
