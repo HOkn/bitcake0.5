@@ -1,15 +1,15 @@
 %h1 Listing users
 
+
+%p#notice= notice
+
 %table
   %thead
     %tr
       %th
-      %th
-      %th
-
   %tbody
     - @users.each do |user|
       %tr
-        %td= link_to user.name, users_path
+        %td= link_to user.name, user
         / # %td= link_to 'Edit', edit_user_path(user)
         / # %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
