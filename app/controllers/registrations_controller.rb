@@ -14,10 +14,10 @@ class RegistrationsController < ApplicationController
   end
 
 
-private
-#SECURE DEFINING OF PARAMETERS, AS PRIVATE CLASSES
-def params_user
-  params.require(:user).permit(:name, :email, :password, :password_confirmation)
-end
+  private
+  #SECURE DEFINING OF PARAMETERS, AS PRIVATE CLASSES
+  def params_user
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
 
 end
