@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   resource :registrations, only: [:new, :create]
   resource :sessions, only: [:new, :create, :destroy]
-
-  #APPARENTLY THS IS NOT NEEDED
-  resources :users
+  resource :users, only: [:index, :show]
 
   #ROOT PAGE
   root 'users#index'
