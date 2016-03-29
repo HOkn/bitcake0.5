@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resource :registrations, only: [:new, :create]
   resources :users
 
-  root 'registrations#new'
+  root 'users#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
