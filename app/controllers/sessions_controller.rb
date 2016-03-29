@@ -7,6 +7,8 @@ class SessionsController < ApplicationController
     email = params_user[:email]
     password = params_user[:password]
 
+    #USING PRE-MADE "LOGIN" METHOD FROM GEM SORCERY; EMAIL AND PASSWORDDS ARE USED TO LOGIN
+
     if login(email, password)
       redirect_to root_url, notice: "successfully logged in"
     else
@@ -14,7 +16,6 @@ class SessionsController < ApplicationController
       render :new
     end
   end
-
 
 
   private
